@@ -77,11 +77,11 @@ export class HomePage {
     console.log(movie);
     this._LOADER.displayPreloader();
 
-    if(movie.pathImage) {
-      this._DB.deleteImage(movie).then((data) => {
-        console.log(data);
-      });
-    }
+    // if(movie.pathImage) {
+    //   this._DB.deleteImage(movie).then((data) => {
+    //     console.log(data);
+    //   });
+    // }
 
     this._DB.deleteMovie(movie.id).then((data) => {
       this.loadAndParseMovies();
