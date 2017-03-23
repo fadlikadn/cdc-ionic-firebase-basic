@@ -4,7 +4,15 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
+import * as firebase from 'firebase';
 
+export const firebaseConfig = {
+    apiKey: "AIzaSyA3_niQfuGzCG_PdPX3v-rYkIQuFRlBwTY",
+    authDomain: "movie-ionic-2-firebase.firebaseapp.com",
+    databaseURL: "https://movie-ionic-2-firebase.firebaseio.com",
+    storageBucket: "movie-ionic-2-firebase.appspot.com",
+    messagingSenderId: "921599744923"
+};
 
 @Component({
   templateUrl: 'app.html'
@@ -19,5 +27,7 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
     });
+
+    firebase.initializeApp(firebaseConfig);
   }
 }
